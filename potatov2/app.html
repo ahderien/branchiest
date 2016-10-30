@@ -17,6 +17,7 @@
 <script>
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
+    $scope.background = "backgrounds/bg-v2.gif"
     $http.get("cards/start.json")
     .then(function (response) {
         $scope.choices = response.data.choices;
