@@ -4,7 +4,7 @@
 <body>
 
 <div ng-app="myApp" ng-controller="customersCtrl">
-
+<img ng-src="background">
 <table>
   <tr ng-repeat="x in choices">
     <td ng-click="nextCard(x.next)">{{ x.text }}</td>
@@ -18,11 +18,17 @@
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
     $http.get("cards/start.json")
-    .then(function (response) {$scope.choices = response.data.choices;});
+    .then(function (response) {
+        $scope.choices = response.data.choices;
+        $scope.background = "backgrounds/"+response.data.background;
+    });
     
     $scope.nextCard = function(next) {
         $http.get("cards/"+next)
-    .then(function (response) {$scope.choices = response.data.choices;});;
+    .then(function (response) {
+            $scope.choices = response.data.choices;
+            $scope.background = "backgrounds/"+response.data.background; 
+        });;
     };
 });
 </script>
