@@ -7,8 +7,8 @@
 
 <table>
   <tr ng-repeat="x in names">
-    <td>{{ x.Name }}</td>
-    <td>{{ x.Country }}</td>
+    <td>{{ x.text }}</td>
+    <td>{{ x.next }}</td>
   </tr>
 </table>
 
@@ -18,7 +18,7 @@
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
     $http.get("cards/1.json")
-    .then(function (response) {$scope.names = response.data.records;});
+    .then(function (response) {$scope.choices = response.data.choices;});
 });
 </script>
 
