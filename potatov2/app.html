@@ -7,8 +7,8 @@
 
 <table>
   <tr ng-repeat="x in choices">
-    <td>{{ x.text }}</td>
-    <td>{{ x.next }}</td>
+    <td ng-click="nextCard(x.next)">{{ x.text }}</td>
+    
   </tr>
 </table>
 
@@ -19,6 +19,11 @@ var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
     $http.get("cards/start.json")
     .then(function (response) {$scope.choices = response.data.choices;});
+    
+    $scope.nextCard = function(next) {
+        $http.get("cards/"+next)
+    .then(function (response) {$scope.choices = response.data.choices;});;
+    };
 });
 </script>
 
