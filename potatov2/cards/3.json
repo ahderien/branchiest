@@ -1,0 +1,10 @@
+{
+    "background":"bg-v2.gif",
+    "char-left":"potato.gif",
+    "char-right":"",
+    
+    "choices":[
+        {"text":"blah","next":"1.json"}
+        {"text":"blah","next":"2.json"}
+    ]
+}
