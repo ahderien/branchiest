@@ -4,7 +4,7 @@
     "char-right":"",
     
     "choices":[
-        {"text":"blah","next":"1.json"},
-        {"text":"blah","next":"2.json"}
+        {"text":"foo","next":"start.json"},
+        {"text":"bar","next":"2.json"}
     ]
 }
