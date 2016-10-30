@@ -17,7 +17,7 @@
 <script>
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
-    $http.get("cards/1.json")
+    $http.get("cards/start.json")
     .then(function (response) {$scope.choices = response.data.choices;});
 });
 </script>
